@@ -1,43 +1,45 @@
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: auto; /* Permitir scroll si el contenido es largo */
     background-color: #f8c8dc;
-    height: 100vh;
+    min-height: 100vh; /* Evita que el contenido se corte en pantallas pequeñas */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    cursor: pointer;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .container {
+    width: 90%; /* Adaptable a pantallas más pequeñas */
     max-width: 600px;
     padding: 20px;
 }
 
 .header {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reducido para mejor visualización en móvil */
     font-weight: bold;
     color: #b3003c;
+    margin-bottom: 15px;
 }
 
 .text {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Ajustado para mejor lectura en móviles */
     color: #000;
     margin-bottom: 15px;
 }
 
 .signature {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #b3003c;
     margin-top: 20px;
 }
 
 .center-image {
-    width: 450px;
+    width: 100%; /* Hace que la imagen sea responsiva */
+    max-width: 450px;
     height: auto;
     margin-top: 20px;
 }
@@ -47,6 +49,7 @@ body {
     color: red;
     font-size: 2rem;
     animation: float 5s linear infinite;
+    z-index: -1; /* Evita que tape el texto */
 }
 
 @keyframes float {
@@ -59,3 +62,4 @@ body {
         opacity: 0;
     }
 }
+
